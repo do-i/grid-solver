@@ -30,6 +30,9 @@ public class Orange6RuleImpl implements Rule {
 
   @Override
   public boolean applyRules(int[] a) {
+    if( a == null || a.length > GRID_SIZE){
+      throw new IllegalArgumentException();
+    }
     boolean result = true;
     result &= EQ.apply(TIMES.apply(3, a[0]), TIMES.apply(2, a[3]));
     result &= EQ.apply(TIMES.apply(3, a[2]), TIMES.apply(2, a[4]));

@@ -10,22 +10,22 @@ package com.djd.fun.rules;
 public enum RelationalOperator {
 
   GT(">") {
-    public boolean apply(double x, double y) {
+    public boolean apply(int x, int y) {
       return x > y;
     }
   },
   LT("<") {
-    public boolean apply(double x, double y) {
+    public boolean apply(int x, int y) {
       return x < y;
     }
   },
   EQ("==") {
-    public boolean apply(double x, double y) {
+    public boolean apply(int x, int y) {
       return 0 == Double.compare(x, y);
     }
   },
   NQ("!=") {
-    public boolean apply(double x, double y) {
+    public boolean apply(int x, int y) {
       return 0 != Double.compare(x, y);
     }
   };
@@ -40,6 +40,6 @@ public enum RelationalOperator {
     return symbol;
   }
 
-  public abstract boolean apply(double x, double y);
+  public abstract boolean apply(int x, int y);
 
 }

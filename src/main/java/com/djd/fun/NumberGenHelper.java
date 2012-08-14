@@ -72,7 +72,7 @@ public class NumberGenHelper {
    *
    * @param textValue
    */
-  private static boolean keep(String textValue) {
+  static boolean keep(String textValue) {
     boolean[] bitMap = new boolean[textValue.length()];
     int[] intArray = toIntArray(textValue);
     for (int i = 0; i < intArray.length; i++) {

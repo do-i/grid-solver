@@ -9,22 +9,25 @@ package com.djd.fun.rules;
  */
 public enum Operator {
   PLUS("+") {
-    public double apply(double x, double y) {
+    public int apply(int x, int y) {
       return x + y;
     }
   },
   MINUS("-") {
-    public double apply(double x, double y) {
+    public int apply(int x, int y) {
       return x - y;
     }
   },
   TIMES("*") {
-    public double apply(double x, double y) {
+    public int apply(int x, int y) {
       return x * y;
     }
   },
   DIVIDE("/") {
-    public double apply(double x, double y) {
+    public int apply(int x, int y) {
+      if(y==0){
+        throw new IllegalArgumentException();
+      }
       return x / y;
     }
   };
@@ -39,6 +42,6 @@ public enum Operator {
     return symbol;
   }
 
-  public abstract double apply(double x, double y);
+  public abstract int apply(int x, int y);
 
 }

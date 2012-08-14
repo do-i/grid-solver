@@ -23,6 +23,9 @@ public class Apple7RuleImpl implements Rule {
 
   @Override
   public boolean applyRules(int[] a) {
+    if( a == null || a.length > GRID_SIZE){
+      throw new IllegalArgumentException();
+    }
     boolean result = true;
     result &= NQ.apply(a[0], 2);
     result &= EQ.apply(PLUS.apply(a[0], a[1]), a[5]);

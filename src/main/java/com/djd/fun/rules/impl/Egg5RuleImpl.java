@@ -32,6 +32,9 @@ public class Egg5RuleImpl implements Rule {
 
   @Override
   public boolean applyRules(int[] a) {
+    if( a == null || a.length > GRID_SIZE){
+      throw new IllegalArgumentException();
+    }
     boolean result = true;
     result &= EQ.apply(PLUS.apply(a[1], a[0]), 6);
     result &= EQ.apply(PLUS.apply(a[4], a[1]), a[2]);
